@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<link href = "style.css" rel = "stylesheet">
+		<title>Деньги нужны всем</title>
+	</head>
+	<body>
+		<header>
+			<div class="head">
+				<div id="logo"><span>Деньги нужны всем</span></div>
+				
+				<div id="live">
+					<img class = "lives ico" name = "live" src = "img/live.png">
+					<img class = "lives ico" name = "live" src = "img/live.png">
+					<img class = "lives ico" name = "live" src = "img/live.png">
+				</div>
+
+				<div id="moneyPerSecond"><img class="ico" src = "img/money.png">0 в сек</div>
+
+				<div id="credit"><img class="ico" src = "img/cashback.png">0</div>
+
+				<div id="timerForCredit"><img class="ico" src = "img/timer.png">0</div>
+
+				<div id="balance"><img class="ico" src = "img/money.png">0</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="levels">
+				<div class="row">
+					<button id = "lvl1" class="off" onclick = "plus1()">Попрошайка<br><img class="ico" src="img/money.png"> 100</button>
+					<button id = "lvl2" class="off" onclick = "plus10()">Подработка<br><img class="ico" src="img/money.png"> 1000</button>
+				</div>
+
+				<div class="row">
+					<button id = "lvl3" class="off" onclick = "plus100()">Работник офиса<br><img class="ico" src="img/money.png"> 10000</button>
+					<button id = "lvl4" class="off" onclick = "plus1000()">Зам директора<br><img class="ico" src="img/money.png"> 1000000</button>
+				</div>
+
+				<div class="row">
+					<button id = "lvl5" class="off" onclick = "plus10000()">Директор<br><img class="ico" src="img/money.png"> 100000000</button>
+					<button id = "lvl6" class="off" onclick = "plus100000()">Олигарх<br><img class="ico" src="img/money.png"> 10000000000</button>
+				</div>
+			</section>
+
+			<section class="game">
+				<div>
+					<img class = "dollar" src = "img/dollar.png" onclick = "addscore()">
+				</div>
+				
+				<div>
+					<img class = "bag" src = "img/bag.png">
+				</div>
+			</section>
+
+			<section class="mini-games">
+				<div class="row">
+					<button class="btnCasino on" onclick = "OnCasino()"><span class="btn-text">Испытать удачу</span><br><img class="ico" src = "img/smile.png"> </button>
+
+					<button class="btnBank on" onclick = "OnBank()"><span class="btn-text">Банк</span><br><img class="ico" src = "img/bank.png"> </button>
+				</div>
+				
+				<div class="row">
+					<button id = "btnHeal" class = "btnHeal on" onclick = "Heal()"><span class="btn-text">Подорожник</span><br><img class="ico" src = "img/heal.png"> </button>
+				</div>
+			</section>
+		</main>
+
+		<div id='casino' class='mini-game'>
+			<div class = "mini-game-frame">
+				<div class="row">
+					<img class = "casino-main-icon" id = "1" src = "img/seven.png">
+					<img class = "casino-main-icon" id = "2" src = "img/strawberry.png">
+					<img class = "casino-main-icon" id = "3" src = "img/cherry.png">
+				</div>		
+
+				<div class="row">
+					<img class = "casino-icon" src = "img/seven.png">
+					<img class = "casino-icon" src = "img/seven.png">
+					<img class = "casino-icon" src = "img/seven.png">
+					<span class="casino-text">x100</span>
+				</div>
+
+				<div class="row">
+					<img class = "casino-icon" src = "img/strawberry.png">
+					<img class = "casino-icon" src = "img/strawberry.png">
+					<img class = "casino-icon" src = "img/strawberry.png">
+					<span class="casino-text">x50</span>
+				</div>
+
+				<div class="row">
+					<img class = "casino-icon" src = "img/cherry.png">
+					<img class = "casino-icon" src = "img/cherry.png">
+					<img class = "casino-icon" src = "img/cherry.png">
+					<span class="casino-text">x10</span>
+				</div>
+
+				<div class="row">
+					<img class = "casino-icon" src = "img/sad.png">
+					<img class = "casino-icon" src = "img/sad.png">
+					<img class = "casino-icon" src = "img/sad.png">
+					<span class="casino-text">x0</span>
+				</div>
+			</div>
+			
+			<img id="casino-play" class = "casino-btn" src = "img/casino-btn.png" onclick = "moverich()">
+		</div>
+
+		<div id='bank' class='mini-game'>
+			<div class = "mini-game-frame">
+				<div class="row">
+					Условия банка
+				</div>
+
+				<div class="row">
+					<button class="btnCredit on" name="credit" onclick = "cred700()">Берете<img class="ico" src = "img/money.png"> 500 <br> Возвращаете <img class="ico" src = "img/money.png"> 700</button>
+				</div>
+
+				<div class="row">
+					<button class="btnCredit on" name="credit" onclick = "cred8000()">Берете<img class="ico" src = "img/money.png"> 5000 <br> Возвращаете <img class="ico" src = "img/money.png"> 8000</button>
+				</div>
+
+				<div class="row">
+					<button class="btnCredit on" name="credit" onclick = "cred90000()">Берете<img class="ico" src = "img/money.png"> 50000 <br> Возвращаете <img class="ico" src = "img/money.png"> 90000</button>
+				</div>
+			</div>
+		</div>
+
+		<img id = "put" class = "putin move" src = "img/putin.png">
+		
+		<img id = "col" class = "collector" src = "img/collector.png">
+		
+		<script src = "script.js"></script>
+	</body>
+</html>

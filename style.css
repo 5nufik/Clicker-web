@@ -1,0 +1,337 @@
+body {
+	font-family: Impact, fantasy;
+	color: #FFFFE0;
+	background-color: #F0E68C;
+	overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.off {
+	background-color: #696969;
+}
+
+.on {
+	transition: .1s;
+	background-color: #808000;
+}
+
+.on:active {
+	transform: scale(0.9);
+}
+
+.ico {
+	height: 1em;
+}
+
+.mini-game {
+	visibility: hidden;
+	opacity: 0;
+	transition: all .2s linear;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background: #00000066;
+	z-index: 99999;
+	left: 0;
+	top: 0;
+}
+
+.mini-game-frame {
+	position: absolute;
+	top: 10%;
+	left: 35%;
+	background-color: #F0E68C;
+	border-radius: 100px;
+	width: 500px;
+	height: 800px;
+	font-size: 50px;
+	font-family: Impact, fantasy;
+	z-index: 500;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.open {
+	visibility: visible;
+	opacity: 1;
+}
+
+										/********* HEADER *********/
+
+header {
+	font-size: 32px;
+	height: 10vh;
+	padding-bottom: 0px;
+	display: flex;
+}
+
+.head {
+	background-color: #808000;
+	border-radius: 40px;
+
+	display: flex;
+	justify-content: space-between;
+	flex-basis: 100%;
+	margin: 10px;
+}
+
+.head .ico {
+	height: 1.5em;
+}
+
+.head div {
+	padding: 20px;
+	display: flex;
+	text-align: center;
+	flex-basis: 15%;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.head div:first-child {
+	flex-basis: 25%;
+	justify-content: flex-start;
+}
+
+										/********* MAIN *********/
+
+main {
+	margin-top: 0px;
+	display: flex;
+	height: 90vh;
+}
+
+button {
+	color: #FFFFE0;
+	font-size: 25px;
+	font-family: Impact, fantasy;
+	width: 250px;
+	height: 250px;
+	border-radius: 150px;
+}
+
+.btn-text {
+	font-size: 24px;
+}
+										/****** LEVELS ******/
+
+.levels {
+	flex-basis: 40%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+										/****** GAME ******/
+
+.game {
+	flex-basis: 20%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dollar {
+	margin-top: 150px;
+	transition: 0.1s;
+	position: relative;
+	z-index: 1;
+}
+
+.dollar:active {
+  transform: scale(0.8);
+}
+
+.rain {
+    -webkit-animation: moneyRain 3s;
+    animation-fill-mode: forwards;
+	position: fixed;
+	width: 180px;
+	height: 100px;
+	top: 30%;
+	left: 45%;
+}
+
+@-webkit-keyframes moneyRain {
+	to {
+		transform: translateY(500px);
+		opacity: 0;
+	}
+}
+
+.bag {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 10px;
+}
+
+										/****** MINI-GAMES ******/
+
+.mini-games {
+	flex-basis: 40%;
+	
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.mini-games .row {
+	padding: 20px;
+}
+
+.btnCasino:active, .btnBank:active, .btnHeal {
+  transform: scale(0.9);
+}
+
+										/****** CASINO ******/
+
+#casino .row {
+	align-items: center;
+}
+
+#casino .row:first-child {
+	margin: 50px 0px;
+}
+
+#casino .row:last-child {
+	margin-bottom: 50px;
+}
+
+.casino-main-icon {
+	width: 150px;
+	height: 150px;
+}
+
+.casino-icon { 
+	margin-left: 10px;
+	width: 100px;
+	height: 100px;
+}
+
+.casino-btn {
+	position: absolute;
+	height: 300px;
+    top: 220px;
+    right: 720px;
+    
+    transform: rotate(30deg);
+	transform-origin: 50% 100%;
+}
+
+.casino-btn.move {
+	animation: casino-play 2s;
+}
+
+@-webkit-keyframes casino-play {
+    50% {
+      transform: rotate(90deg);
+    }
+	100% {
+      transform: rotate(30deg);
+    }
+}
+
+										/****** BANK ******/
+
+.btnCredit {
+	transition: .1s;
+	color: #FFFFE0;
+	font-size: 25px;
+	font-family: Impact, fantasy;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	width: 300px;
+	height: 150px;
+	top: 50px;
+}
+
+#bank .row:first-child {
+	margin-top: 50px;
+}
+
+#bank .row:last-child {
+	margin-bottom: 50px;
+}
+
+										/****** PUTIN ******/
+
+
+
+.putin {
+	opacity: 0;
+	position: fixed;
+	right: 500px;
+	bottom: -350px;
+}
+
+.move-putin {
+	opacity: 1;
+	-webkit-animation: goputin 3s;
+}
+
+@-webkit-keyframes goputin {
+    50% {
+		transform: translateY(-400px);
+    }
+	100% {
+		transform: translateY(0px);
+    }
+}
+
+
+										/****** COLLECTORS ******/
+
+
+
+.collector{
+	opacity: 0;
+	position: fixed;
+	right: 50px;
+	bottom: -400px;
+}
+
+.move-collector {
+	opacity: 1;
+	-webkit-animation: gocollector 3s;
+}
+
+@-webkit-keyframes gocollector {
+    50% {
+        transform: translateY(-400px);
+    }
+	100% {
+        transform: translateY(0px);
+    }
+}
+
+.lives {
+	display: block;
+}
+
+.lives.off {
+		display: none;
+}
